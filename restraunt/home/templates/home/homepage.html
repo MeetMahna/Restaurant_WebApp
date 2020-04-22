@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block title %}
+        <title>Home</title>
+{% endblock %}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome!</title>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: darkblue;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 5%;
+  padding: 0.5em 1em;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.brk-btn:hover{
+    color: white;
+
+}
+
+.main{
+    margin-left: 100px;
+    margin-top: 100px;
+    }
+
+nav{
+    background-color: #fda800;
+    }
+
+
+</style>
+</head>
+<body>
+
+
+
+
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md" >
+        <a href="/" class="navbar-brand">
+            <img src="https://cdn1.iconfinder.com/data/icons/maps-and-locations/16/restaurant-512.png" height="80" width="150" alt="Brand-logo">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="brk-btn">Home</a> &nbsp
+                <a href="#" class="brk-btn">Story</a> &nbsp
+                <a href="#" class="brk-btn" tabindex="-1" aria-multiline="false" >Contact</a>&nbsp
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/checkout" class="brk-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/yellow-colored-set-3/512/cart-512.png" height="90" width="130">
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</body>
+
+<div class="main">
+    {% block center %}
+    <body style="background-image:url('https://wallpaperaccess.com/full/462860.jpg');
+    height: 95vh;
+    background-size: cover;
+    background-position: center;">
+
+    <h1 style=" color: white; font-family: Comic Sans MS, cursive; font-size: 165px; line-height: 300px; font-weight: normal;  text-align: center; text-shadow: 0 1px 1px #fff;">
+        Food Mood
+    </h1>
+
+
+    <div style="margin-left: 38%; margin-top:" >
+    <a href="{% url 'menu' %}">
+        <button class="btn btn-raised btn-success btn-lg" autofocus>
+            <h2>
+                <font color="black">
+                Menu <img src="https://www.seekpng.com/png/detail/201-2018453_our-menus-food-menu-icon-png.png" height="80" width="120">
+                </font>
+            </h2>
+        </button>
+    </a>
+    </div>
+    </body>
+    {% endblock %}
+</div>
+</html>
+
+
+
+
+
+
+
+
+

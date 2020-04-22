@@ -1,0 +1,105 @@
+{% extends 'home/homepage.html' %}
+
+    {% block title %}
+        <title>Menu</title>
+
+    {% endblock %}
+
+{% block center %}
+<! Menu icon on top>
+<img style="position:absolute; TOP:100px; LEFT:670px;" src="https://cdn3.iconfinder.com/data/icons/food-drink/512/Waiter-512.png" height="180" width="170">
+
+    <body
+    style="background: url('https://ak4.picdn.net/shutterstock/videos/18755474/thumb/5.jpg');
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    ">
+    </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<div class="container">
+{% for f in food_data %}
+
+
+    <table id="menu" class="table table-hover table-condensed" style="background-color: white; width:400px;margin-left:600px;">
+
+       <h1 style=" color: #f2f2f2; font-size: 65px; font-weight: 400;  float: left; margin: 0 370px 50px; font-family: Comic Sans MS, serif;">
+           <strong>{{f}}</strong>
+        </h1>
+
+
+
+        <thead style="background-color: black; color:white;">
+            <tr>
+            <th style="width:30%">Product</th>
+            <th style="width:10%">Price</th>
+            <th style="width:10%">Quantity</th>
+            </tr>
+        </thead>
+        {% for i in f.item_set.all %}
+        <tbody>
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                {{i}}
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">{{i.item_price}}</td>
+                    <td data-th="Quantity">
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" value={{i.item_qty}}>
+                              {{i.item_qty}}
+                          </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/category/{{i.id}}/0">0</a>
+                                <a class="dropdown-item" href="/category/{{i.id}}/1">1</a>
+                                <a class="dropdown-item" href="/category/{{i.id}}/2">2</a>
+                                <a class="dropdown-item" href="/category/{{i.id}}/3">3</a>
+                                <a class="dropdown-item" href="/category/{{i.id}}/4">4</a>
+                                <a class="dropdown-item" href="/category/{{i.id}}/5">5</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+    <br><br><br>
+    {% endfor %}
+    <a style="position: absolute;  right:30px ;" href="/checkout"><button type="submit" name="save" class="btn btn-success"><h1>Checkout</h1></button></a>
+
+</div>
+
+
+<!pizza>
+<IMG STYLE="position:absolute; TOP:760px; LEFT:170px; WIDTH:400px;border:3px solid ; padding:1px; HEIGHT:350px" SRC="https://image.freepik.com/free-photo/slice-cut-from-classic-pepperoni-pizza-with-green-pepper-rolls_114579-1963.jpg">
+
+<!burger>
+<IMG STYLE="position:absolute; TOP:320px; LEFT:170px; WIDTH:400px;border:3px solid ; padding:1px; HEIGHT:300px" SRC="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=902&q=80">
+
+<!pasta>
+<IMG STYLE="position:absolute; TOP:1240px; LEFT:170px; WIDTH:400px;border:3px solid ; padding:1px; HEIGHT:320px" SRC="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,w_1460/k%2Farchive%2F36314b0a36cbc6847e8958fa577bfc2ba02a6eb0">
+
+<!shake>
+<IMG STYLE="position:absolute; TOP:1700px; LEFT:170px; WIDTH:400px;border:3px solid ; padding:1px; HEIGHT:300px" src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'home/homepage.html' %}
+
+{% block title %}
+<title>
+    Login Here
+</title>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block center %}
+    <br>
+    <h1><font color="black">Log In :</font></h1>
+    <br>
+    <body style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3Lvq_H-0SNq4oElmgAPk-lXqZSkoPW55Igcy_hvy93CeD4hze&usqp=CAU');
+    height: 78vh; background-size: cover; background-position: center;">
+    <font color="black">
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p>Don't have an account? Create one <a href="/register">here</a></p>
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+    </font>
+{% endblock %}
